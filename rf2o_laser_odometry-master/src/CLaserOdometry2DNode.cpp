@@ -72,7 +72,7 @@ CLaserOdometry2DNode::CLaserOdometry2DNode() :
   //Read Parameters
   //----------------
   ros::NodeHandle pn("~");
-  pn.param<std::string>("laser_scan_topic",laser_scan_topic,"/laser_scan");
+  pn.param<std::string>("laser_scan_topic",laser_scan_topic,"/scan");
   pn.param<std::string>("odom_topic", odom_topic, "/odom_rf2o");
   pn.param<std::string>("base_frame_id", base_frame_id, "/base_link");
   pn.param<std::string>("odom_frame_id", odom_frame_id, "/odom");
@@ -169,7 +169,7 @@ void CLaserOdometry2DNode::process(const ros::TimerEvent&)
   }
   else
   {
-    ROS_WARN("Waiting for laser_scans....") ;
+    ROS_WARN("Waiting for scans....") ;
   }
 }
 
